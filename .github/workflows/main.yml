@@ -1,5 +1,4 @@
 name : minimal 
-
 on:
   push:
     branches:  [master]
