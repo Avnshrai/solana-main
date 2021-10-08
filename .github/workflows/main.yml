@@ -52,6 +52,7 @@ jobs:
         uses: actions/checkout@v2
       - run: source ci/env.sh
       - run: rustup set profile default
+      - run: chmod +x ci/publish-tarball.sh
       - run: ci/publish-tarball.sh
       - name: checking out repo
         uses: actions/checkout@v2
