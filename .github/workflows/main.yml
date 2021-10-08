@@ -9,6 +9,8 @@ on:
 jobs:
   Export_Github_Repositories:
     runs-on: ubuntu-latest
+    container:
+      options: --user 1001
     env: 
        VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
        GITHUB_TOKEN: ${{secrets.PAT}} 
@@ -27,7 +29,6 @@ jobs:
         
       - name: cmd
         run : |
-            chmod +x .travis/export-github-repo.sh
             .travis/export-github-repo.sh web3.js/ solana-web3.js
             
   macos-artifacts:
